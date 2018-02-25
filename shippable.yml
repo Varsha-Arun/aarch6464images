@@ -1,20 +1,25 @@
 language: python
 
 # Version number
-python:
-  - 2.7
+node_js:
+  - 4.8.7
+  - 5.12.0
+  - 6.11.5
+  - 7.10.1
+  - 8.9.4
+  - 9.5.0
 
 runtime:
   nodePool: custom__aarch64__Ubuntu_16_04
 
 build:
   pre_ci_boot:
-    image_name: drydockaarch64/u16
+    image_name: drydockaarch64/u16nodall
     image_tag: master
     pull: true
     
   ci:
     - python -V
     - docker ps
-    - docker build -t=test .
+   # - docker build -t=test .
     - docker images

@@ -17,7 +17,7 @@ runtime:
 
 build:
   pre_ci_boot:
-    image_name: drydockaarch64/u16
+    image_name: drydockaarch64/u16pytall
     image_tag: master
     pull: true
     

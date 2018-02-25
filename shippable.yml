@@ -1,0 +1,20 @@
+language: python
+
+# Version number
+python:
+  - 2.7
+
+runtime:
+  nodePool: custom__aarch64__Ubuntu_16_04
+
+build:
+  pre_ci_boot:
+    image_name: drydockaarch64/u16
+    image_tag: master
+    pull: true
+    
+  ci:
+    - python -V
+    - docker ps
+    - docker build -t=test .
+    - docker images

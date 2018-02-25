@@ -1,20 +1,29 @@
-language: python
+language: java
 
 # Version number
 python:
-  - 2.7
+  - openjdk7
+  - oraclejdk8
+  - openjdk8
+  - oraclejdk9
+  - openjdk9
 
 runtime:
   nodePool: custom__aarch64__Ubuntu_16_04
 
 build:
   pre_ci_boot:
-    image_name: drydockaarch64/u16
+    image_name: drydockaarch64/u16javall
     image_tag: master
     pull: true
     
   ci:
-    - python -V
+    - java -version
+    - echo $SHIPPABLE_JDK_VERSION
     - docker ps
     - docker build -t=test .
     - docker images
+    - mvn --version    
+    - ant -version 
+    - gradle --version
+    

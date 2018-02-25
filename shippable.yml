@@ -1,12 +1,10 @@
 language: java
 
 # Version number
-jdk:
- # - openjdk7
+java:
+  - openjdk7
   - openjdk8
-  - openjdk9 
   - oraclejdk8
-  - oraclejdk9
 
 runtime:
   nodePool: custom__aarch64__Ubuntu_16_04
@@ -15,15 +13,13 @@ build:
   pre_ci_boot:
     image_name: drydockaarch64/u16javall
     image_tag: master
-    pull: true
     
   ci:
-    - java -version
-    - echo $SHIPPABLE_JDK_VERSION
+    - java -verison
     - docker ps
    # - docker build -t=test .
     - docker images
-    - mvn --version    
-    - ant -version 
-    - gradle --version
+   # - mvn --version    
+   # - ant -version 
+   # - gradle --version
     

@@ -1,12 +1,12 @@
 language: java
 
 # Version number
-python:
+jdk:
  # - openjdk7
-  - oraclejdk8
   - openjdk8
+  - openjdk9 
+  - oraclejdk8
   - oraclejdk9
-  - openjdk9
 
 runtime:
   nodePool: custom__aarch64__Ubuntu_16_04

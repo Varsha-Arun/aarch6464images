@@ -21,7 +21,7 @@ build:
     - java -version
     - echo $SHIPPABLE_JDK_VERSION
     - docker ps
-    - docker build -t=test .
+   # - docker build -t=test .
     - docker images
     - mvn --version    
     - ant -version 

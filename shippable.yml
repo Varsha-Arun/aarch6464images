@@ -6,11 +6,14 @@ python:
 
 runtime:
   nodePool: default-restricted
+env:
+  - secure: t8FBKU8wCUJi91cQoaZXcGuhEC06gnbNuUHQnO91ii4IE6LDSd8eF3Tc4EyORsOeCjiQ5ed29sXg4kdDnGBssdiaEZ7/E6vLlF6nWdP+pYD4Pl0+TH2y969MDO8MWFGezFyTb7OuXc56QLtFpdK72u1l0O9ndT6itNRMqBQ7hRgXtEBFZJ94LrMe/QBVi131tS05YxgGk4SxvkyBslXDRkHamPBTSZipMmhiPaeT/1+1+5aKBjVJSGrh6zzIytfYwGIOF71nl9pY073SIHfWW1s5ec0AbQxBPoshj5RCaVYSuYkcHmOYaNYq/Zbys8dr//jDMKWB62Z956DcMiaYjA==
 
 build:
     
   ci:
     - python -V
+    - docker login -u $username -p $password
     - docker ps
     - docker build -t=test .
     - docker images
@@ -19,8 +22,8 @@ build:
   post_ci:
     - docker push shippabledocker/sample_node_pvt:masterarm
     
-integrations:    
-  hub:
+#integrations:    
+#  hub:
       #Docker integration
-    - integrationName: docker
-      type: dockerRegistryLogin
+  #  - integrationName: docker
+  #    type: dockerRegistryLogin

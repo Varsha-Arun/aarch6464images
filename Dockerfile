@@ -1,4 +1,4 @@
 
-FROM shippabledocker/pipelinev2:deploy.1
+FROM alpine
 
 RUN mkdir -p /tmp/logs
